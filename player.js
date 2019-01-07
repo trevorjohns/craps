@@ -62,32 +62,56 @@ class Player {
         return false;
     }
     placeComeBetOdds(amount, number){
-        if(this.money>=amount){
-            this.money -= amount;
-            this.wager += amount;
             switch(number) {
                 case 4:
-                    this.bet.come.odds.four += amount;
-                    break;
+                    if (this.money>=amount && this.bet.come.four>0) {
+                        this.money -= amount;
+                        this.wager += amount;
+                        this.bet.come.odds.four += amount;
+                        return true;
+                    }
+                    return false;
                 case 5:
-                    this.bet.come.odds.five += amount;
-                    break;
+                    if (this.money>=amount && this.bet.come.five>0) {
+                        this.money -= amount;
+                        this.wager += amount;
+                        this.bet.come.odds.five += amount;
+                        return true;
+                    }
+                    return false;
                 case 6:
-                    this.bet.come.odds.six += amount;
-                    break;
+                    if (this.money>=amount && this.bet.come.six>0) {
+                        this.money -= amount;
+                        this.wager += amount;
+                        this.bet.come.odds.six += amount;
+                        return true;
+                    }
+                    return false;
                 case 8:
-                    this.bet.come.odds.eight += amount;
-                    break;
+                    if (this.money>=amount && this.bet.come.eight>0) {
+                        this.money -= amount;
+                        this.wager += amount;
+                        this.bet.come.odds.eight += amount;
+                        return true;
+                    }
+                    return false;
                 case 9:
-                    this.bet.come.odds.nine += amount;
-                    break;
+                    if (this.money>=amount && this.bet.come.nine>0) {
+                        this.money -= amount;
+                        this.wager += amount;
+                        this.bet.come.odds.nine += amount;
+                        return true;
+                    }
+                    return false;
                 case 10:
-                    this.bet.come.odds.ten += amount;
-                    break;
-                default:
-                    break;
+                    if (this.money>=amount && this.bet.come.ten>0) {
+                        this.money -= amount;
+                        this.wager += amount;
+                        this.bet.come.odds.ten += amount;
+                        return true;
+                    }
+                    return false;
             }
-        }
     }
     placePropBet(amount, number){
         if(this.money>=amount){
@@ -244,11 +268,65 @@ class Player {
         this.bet.big.eight = 0;
     }
     placeDontComeBet(amount){
-        if(this.money>=amount){
+        if(this.money>=amount  && point!=null){
             this.money -= amount;
             this.wager += amount;
-            this.bet.dontCome.box = amount;
+            this.bet.dontCome.box += amount;
+            return true;
         }
+        return false;
+    }
+    placeDontComeBetOdds(amount, number){
+            switch(number) {
+                case 4:
+                    if (this.money>=amount && this.bet.dontCome.four>0) {
+                        this.money -= amount;
+                        this.wager += amount;
+                        this.bet.dontCome.odds.four += amount;
+                        return true;
+                    }
+                    return false;
+                case 5:
+                    if (this.money>=amount && this.bet.dontCome.five>0) {
+                        this.money -= amount;
+                        this.wager += amount;
+                        this.bet.dontCome.odds.five += amount;
+                        return true;
+                    }
+                    return false;
+                case 6:
+                    if (this.money>=amount && this.bet.dontCome.six>0) {
+                        this.money -= amount;
+                        this.wager += amount;
+                        this.bet.dontCome.odds.six += amount;
+                        return true;
+                    }
+                    return false;
+                case 8:
+                    if (this.money>=amount && this.bet.dontCome.eight>0) {
+                        this.money -= amount;
+                        this.wager += amount;
+                        this.bet.dontCome.odds.eight += amount;
+                        return true;
+                    }
+                    return false;
+                case 9:
+                    if (this.money>=amount && this.bet.dontCome.nine>0) {
+                        this.money -= amount;
+                        this.wager += amount;
+                        this.bet.dontCome.odds.nine += amount;
+                        return true;
+                    }
+                    return false;
+                case 10:
+                    if (this.money>=amount && this.bet.dontCome.ten>0) {
+                        this.money -= amount;
+                        this.wager += amount;
+                        this.bet.dontCome.odds.ten += amount;
+                        return true;
+                    }
+                    return false;
+            }
     }
 }
 

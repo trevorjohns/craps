@@ -275,7 +275,28 @@ window.onload = function() {
     });
 
 
+    document.getElementById("dontComeBar").addEventListener("click",function () {
+        var success = user.placeDontComeBet(unit);
 
+        if (!svg.getElementById("dontComeBarBet") && success) {
+            var element = document.createElementNS('http://www.w3.org/2000/svg','image');
+            element.setAttributeNS('http://www.w3.org/1999/xlink','href', 'images/unit'+unit+'.png');
+            element.setAttributeNS(null,'height','69');
+            element.setAttributeNS(null,'width','52');
+            element.setAttributeNS(null,'x',event.clientX-25);
+            element.setAttributeNS(null,'y',event.clientY-25);
+            element.setAttributeNS(null, 'visibility', 'visible');
+            element.setAttributeNS(null,"id","dontComeBarBet");
+            svg.appendChild(element);
+    
+            var text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+            text.setAttributeNS(null, 'x', event.clientX-5);
+            text.setAttributeNS(null, 'y', event.clientY+15);
+            text.setAttributeNS(null, "id","dontComeBarBetText")
+            svg.appendChild(text);
+        }
+        update();
+    });
     
 
     document.getElementById("rollButton").addEventListener("click",function () {
@@ -370,6 +391,7 @@ window.onload = function() {
         update();
     });
 
+    
 
     document.getElementById("passLine").addEventListener("mouseover", function (){
         if(point==null){
@@ -463,6 +485,583 @@ window.onload = function() {
         }
     });
 
+    document.getElementById("dontComeBar").addEventListener("mouseover", function (){
+        if(point==null){
+            var css = '#dontComeBar:hover{ fill:rgba(255, 0, 0, .75); }';
+            var style = document.createElement('style');
+            if (style.styleSheet) {
+                style.styleSheet.cssText = css;
+            } else {
+                style.appendChild(document.createTextNode(css));
+            }
+            document.getElementById("dontComeBar").appendChild(style);
+        }
+        else{
+            var css = '#dontComeBar:hover{ fill:rgba(0, 255, 0, .75); }';
+            var style = document.createElement('style');
+            if (style.styleSheet) {
+                style.styleSheet.cssText = css;
+            } else {
+                style.appendChild(document.createTextNode(css));
+            }
+            document.getElementById("dontComeBar").appendChild(style);
+        }
+    });
+
+    
+
+        document.getElementById("comeOddsFour").addEventListener("mouseover", function (){
+            if(user.bet.come.four>0){
+                var css = '#comeOddsFour:hover{ fill:rgba(0, 255, 0, .75); }';
+                var style = document.createElement('style');
+                if (style.styleSheet) {
+                    style.styleSheet.cssText = css;
+                } else {
+                    style.appendChild(document.createTextNode(css));
+                }
+                document.getElementById("comeOddsFour").appendChild(style);
+            }
+            else{
+                var css = '#comeOddsFour:hover{ fill:rgba(255, 0, 0, .75); }';
+                var style = document.createElement('style');
+                if (style.styleSheet) {
+                    style.styleSheet.cssText = css;
+                } else {
+                    style.appendChild(document.createTextNode(css));
+                }
+                document.getElementById("comeOddsFour").appendChild(style);
+            }
+        });
+
+        document.getElementById("comeOddsFive").addEventListener("mouseover", function (){
+            if(user.bet.come.five>0){
+                var css = '#comeOddsFive:hover{ fill:rgba(0, 255, 0, .75); }';
+                var style = document.createElement('style');
+                if (style.styleSheet) {
+                    style.styleSheet.cssText = css;
+                } else {
+                    style.appendChild(document.createTextNode(css));
+                }
+                document.getElementById("comeOddsFive").appendChild(style);
+            }
+            else{
+                var css = '#comeOddsFive:hover{ fill:rgba(255, 0, 0, .75); }';
+                var style = document.createElement('style');
+                if (style.styleSheet) {
+                    style.styleSheet.cssText = css;
+                } else {
+                    style.appendChild(document.createTextNode(css));
+                }
+                document.getElementById("comeOddsFive").appendChild(style);
+            }
+        });
+
+        document.getElementById("comeOddsSix").addEventListener("mouseover", function (){
+            if(user.bet.come.six>0){
+                var css = '#comeOddsSix:hover{ fill:rgba(0, 255, 0, .75); }';
+                var style = document.createElement('style');
+                if (style.styleSheet) {
+                    style.styleSheet.cssText = css;
+                } else {
+                    style.appendChild(document.createTextNode(css));
+                }
+                document.getElementById("comeOddsSix").appendChild(style);
+            }
+            else{
+                var css = '#comeOddsSix:hover{ fill:rgba(255, 0, 0, .75); }';
+                var style = document.createElement('style');
+                if (style.styleSheet) {
+                    style.styleSheet.cssText = css;
+                } else {
+                    style.appendChild(document.createTextNode(css));
+                }
+                document.getElementById("comeOddsSix").appendChild(style);
+            }
+        });
+
+        document.getElementById("comeOddsEight").addEventListener("mouseover", function (){
+            if(user.bet.come.eight>0){
+                var css = '#comeOddsEight:hover{ fill:rgba(0, 255, 0, .75); }';
+                var style = document.createElement('style');
+                if (style.styleSheet) {
+                    style.styleSheet.cssText = css;
+                } else {
+                    style.appendChild(document.createTextNode(css));
+                }
+                document.getElementById("comeOddsEight").appendChild(style);
+            }
+            else{
+                var css = '#comeOddsEight:hover{ fill:rgba(255, 0, 0, .75); }';
+                var style = document.createElement('style');
+                if (style.styleSheet) {
+                    style.styleSheet.cssText = css;
+                } else {
+                    style.appendChild(document.createTextNode(css));
+                }
+                document.getElementById("comeOddsEight").appendChild(style);
+            }
+        });
+
+        document.getElementById("comeOddsNine").addEventListener("mouseover", function (){
+            if(user.bet.come.nine>0){
+                var css = '#comeOddsNine:hover{ fill:rgba(0, 255, 0, .75); }';
+                var style = document.createElement('style');
+                if (style.styleSheet) {
+                    style.styleSheet.cssText = css;
+                } else {
+                    style.appendChild(document.createTextNode(css));
+                }
+                document.getElementById("comeOddsNine").appendChild(style);
+            }
+            else{
+                var css = '#comeOddsNine:hover{ fill:rgba(255, 0, 0, .75); }';
+                var style = document.createElement('style');
+                if (style.styleSheet) {
+                    style.styleSheet.cssText = css;
+                } else {
+                    style.appendChild(document.createTextNode(css));
+                }
+                document.getElementById("comeOddsNine").appendChild(style);
+            }
+        });
+
+        document.getElementById("comeOddsTen").addEventListener("mouseover", function (){
+            if(user.bet.come.ten>0){
+                var css = '#comeOddsTen:hover{ fill:rgba(0, 255, 0, .75); }';
+                var style = document.createElement('style');
+                if (style.styleSheet) {
+                    style.styleSheet.cssText = css;
+                } else {
+                    style.appendChild(document.createTextNode(css));
+                }
+                document.getElementById("comeOddsTen").appendChild(style);
+            }
+            else{
+                var css = '#comeOddsTen:hover{ fill:rgba(255, 0, 0, .75); }';
+                var style = document.createElement('style');
+                if (style.styleSheet) {
+                    style.styleSheet.cssText = css;
+                } else {
+                    style.appendChild(document.createTextNode(css));
+                }
+                document.getElementById("comeOddsTen").appendChild(style);
+            }
+        });
+    
+        document.getElementById("comeOddsFour").addEventListener("click", function () {
+            var success = user.placeComeBetOdds(unit,4);
+    
+            if(!svg.getElementById("comeOddsFourBet") && success){
+                var element = document.createElementNS('http://www.w3.org/2000/svg','image');
+                element.setAttributeNS('http://www.w3.org/1999/xlink','href', 'images/unit'+unit+'.png');
+                element.setAttributeNS(null,'height','69');
+                element.setAttributeNS(null,'width','52');
+                element.setAttributeNS(null,'x',260);
+                element.setAttributeNS(null,'y',120);
+                element.setAttributeNS(null, 'visibility', 'visible');
+                element.setAttributeNS(null,"id","comeOddsFourBet");
+                svg.appendChild(element);
+    
+                var text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+                text.setAttributeNS(null, 'x', 280);
+                text.setAttributeNS(null, 'y', 160);
+                text.setAttributeNS(null, "id","comeOddsFourBetText")
+                svg.appendChild(text);
+            }
+            update();
+        });
+
+        document.getElementById("comeOddsFive").addEventListener("click", function () {
+            var success = user.placeComeBetOdds(unit,5);
+    
+            if(!svg.getElementById("comeOddsFiveBet") && success){
+                var element = document.createElementNS('http://www.w3.org/2000/svg','image');
+                element.setAttributeNS('http://www.w3.org/1999/xlink','href', 'images/unit'+unit+'.png');
+                element.setAttributeNS(null,'height','69');
+                element.setAttributeNS(null,'width','52');
+                element.setAttributeNS(null,'x',365);
+                element.setAttributeNS(null,'y',120);
+                element.setAttributeNS(null, 'visibility', 'visible');
+                element.setAttributeNS(null,"id","comeOddsFiveBet");
+                svg.appendChild(element);
+    
+                var text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+                text.setAttributeNS(null, 'x', 385);
+                text.setAttributeNS(null, 'y', 160);
+                text.setAttributeNS(null, "id","comeOddsFiveBetText")
+                svg.appendChild(text);
+            }
+            update();
+        });
+
+        document.getElementById("comeOddsSix").addEventListener("click", function () {
+            var success = user.placeComeBetOdds(unit,6);
+    
+            if(!svg.getElementById("comeOddsSixBet") && success){
+                var element = document.createElementNS('http://www.w3.org/2000/svg','image');
+                element.setAttributeNS('http://www.w3.org/1999/xlink','href', 'images/unit'+unit+'.png');
+                element.setAttributeNS(null,'height','69');
+                element.setAttributeNS(null,'width','52');
+                element.setAttributeNS(null,'x',465);
+                element.setAttributeNS(null,'y',120);
+                element.setAttributeNS(null, 'visibility', 'visible');
+                element.setAttributeNS(null,"id","comeOddsSixBet");
+                svg.appendChild(element);
+    
+                var text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+                text.setAttributeNS(null, 'x', 485);
+                text.setAttributeNS(null, 'y', 160);
+                text.setAttributeNS(null, "id","comeOddsSixBetText")
+                svg.appendChild(text);
+            }
+            update();
+        });
+
+        document.getElementById("comeOddsEight").addEventListener("click", function () {
+            var success = user.placeComeBetOdds(unit,8);
+    
+            if(!svg.getElementById("comeOddsEightBet") && success){
+                var element = document.createElementNS('http://www.w3.org/2000/svg','image');
+                element.setAttributeNS('http://www.w3.org/1999/xlink','href', 'images/unit'+unit+'.png');
+                element.setAttributeNS(null,'height','69');
+                element.setAttributeNS(null,'width','52');
+                element.setAttributeNS(null,'x',565);
+                element.setAttributeNS(null,'y',120);
+                element.setAttributeNS(null, 'visibility', 'visible');
+                element.setAttributeNS(null,"id","comeOddsEightBet");
+                svg.appendChild(element);
+    
+                var text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+                text.setAttributeNS(null, 'x', 585);
+                text.setAttributeNS(null, 'y', 160);
+                text.setAttributeNS(null, "id","comeOddsEightBetText")
+                svg.appendChild(text);
+            }
+            update();
+        });
+
+        document.getElementById("comeOddsNine").addEventListener("click", function () {
+            var success = user.placeComeBetOdds(unit,9);
+    
+            if(!svg.getElementById("comeOddsNineBet") && success){
+                var element = document.createElementNS('http://www.w3.org/2000/svg','image');
+                element.setAttributeNS('http://www.w3.org/1999/xlink','href', 'images/unit'+unit+'.png');
+                element.setAttributeNS(null,'height','69');
+                element.setAttributeNS(null,'width','52');
+                element.setAttributeNS(null,'x',665);
+                element.setAttributeNS(null,'y',120);
+                element.setAttributeNS(null, 'visibility', 'visible');
+                element.setAttributeNS(null,"id","comeOddsNineBet");
+                svg.appendChild(element);
+    
+                var text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+                text.setAttributeNS(null, 'x', 685);
+                text.setAttributeNS(null, 'y', 160);
+                text.setAttributeNS(null, "id","comeOddsNineBetText")
+                svg.appendChild(text);
+            }
+            update();
+        });
+
+        document.getElementById("comeOddsTen").addEventListener("click", function () {
+            var success = user.placeComeBetOdds(unit,10);
+    
+            if(!svg.getElementById("comeOddsTenBet") && success){
+                var element = document.createElementNS('http://www.w3.org/2000/svg','image');
+                element.setAttributeNS('http://www.w3.org/1999/xlink','href', 'images/unit'+unit+'.png');
+                element.setAttributeNS(null,'height','69');
+                element.setAttributeNS(null,'width','52');
+                element.setAttributeNS(null,'x',765);
+                element.setAttributeNS(null,'y',120);
+                element.setAttributeNS(null, 'visibility', 'visible');
+                element.setAttributeNS(null,"id","comeOddsTenBet");
+                svg.appendChild(element);
+    
+                var text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+                text.setAttributeNS(null, 'x', 785);
+                text.setAttributeNS(null, 'y', 160);
+                text.setAttributeNS(null, "id","comeOddsTenBetText")
+                svg.appendChild(text);
+            }
+            update();
+        });
+
+
+        document.getElementById("dontComeOddsFour").addEventListener("mouseover", function (){
+            if(user.bet.dontCome.four>0){
+                var css = '#dontComeOddsFour:hover{ fill:rgba(0, 255, 0, .75); }';
+                var style = document.createElement('style');
+                if (style.styleSheet) {
+                    style.styleSheet.cssText = css;
+                } else {
+                    style.appendChild(document.createTextNode(css));
+                }
+                document.getElementById("dontComeOddsFour").appendChild(style);
+            }
+            else{
+                var css = '#dontComeOddsFour:hover{ fill:rgba(255, 0, 0, .75); }';
+                var style = document.createElement('style');
+                if (style.styleSheet) {
+                    style.styleSheet.cssText = css;
+                } else {
+                    style.appendChild(document.createTextNode(css));
+                }
+                document.getElementById("dontComeOddsFour").appendChild(style);
+            }
+        });
+
+        document.getElementById("dontComeOddsFive").addEventListener("mouseover", function (){
+            if(user.bet.dontCome.five>0){
+                var css = '#dontComeOddsFive:hover{ fill:rgba(0, 255, 0, .75); }';
+                var style = document.createElement('style');
+                if (style.styleSheet) {
+                    style.styleSheet.cssText = css;
+                } else {
+                    style.appendChild(document.createTextNode(css));
+                }
+                document.getElementById("dontComeOddsFive").appendChild(style);
+            }
+            else{
+                var css = '#dontComeOddsFive:hover{ fill:rgba(255, 0, 0, .75); }';
+                var style = document.createElement('style');
+                if (style.styleSheet) {
+                    style.styleSheet.cssText = css;
+                } else {
+                    style.appendChild(document.createTextNode(css));
+                }
+                document.getElementById("dontComeOddsFive").appendChild(style);
+            }
+        });
+
+        document.getElementById("dontComeOddsSix").addEventListener("mouseover", function (){
+            if(user.bet.dontCome.six>0){
+                var css = '#dontComeOddsSix:hover{ fill:rgba(0, 255, 0, .75); }';
+                var style = document.createElement('style');
+                if (style.styleSheet) {
+                    style.styleSheet.cssText = css;
+                } else {
+                    style.appendChild(document.createTextNode(css));
+                }
+                document.getElementById("dontComeOddsSix").appendChild(style);
+            }
+            else{
+                var css = '#dontComeOddsSix:hover{ fill:rgba(255, 0, 0, .75); }';
+                var style = document.createElement('style');
+                if (style.styleSheet) {
+                    style.styleSheet.cssText = css;
+                } else {
+                    style.appendChild(document.createTextNode(css));
+                }
+                document.getElementById("dontComeOddsSix").appendChild(style);
+            }
+        });
+
+        document.getElementById("dontComeOddsEight").addEventListener("mouseover", function (){
+            if(user.bet.dontCome.eight>0){
+                var css = '#dontComeOddsEight:hover{ fill:rgba(0, 255, 0, .75); }';
+                var style = document.createElement('style');
+                if (style.styleSheet) {
+                    style.styleSheet.cssText = css;
+                } else {
+                    style.appendChild(document.createTextNode(css));
+                }
+                document.getElementById("dontComeOddsEight").appendChild(style);
+            }
+            else{
+                var css = '#dontComeOddsEight:hover{ fill:rgba(255, 0, 0, .75); }';
+                var style = document.createElement('style');
+                if (style.styleSheet) {
+                    style.styleSheet.cssText = css;
+                } else {
+                    style.appendChild(document.createTextNode(css));
+                }
+                document.getElementById("dontComeOddsEight").appendChild(style);
+            }
+        });
+
+        document.getElementById("dontComeOddsNine").addEventListener("mouseover", function (){
+            if(user.bet.dontCome.nine>0){
+                var css = '#dontComeOddsNine:hover{ fill:rgba(0, 255, 0, .75); }';
+                var style = document.createElement('style');
+                if (style.styleSheet) {
+                    style.styleSheet.cssText = css;
+                } else {
+                    style.appendChild(document.createTextNode(css));
+                }
+                document.getElementById("dontComeOddsNine").appendChild(style);
+            }
+            else{
+                var css = '#dontComeOddsNine:hover{ fill:rgba(255, 0, 0, .75); }';
+                var style = document.createElement('style');
+                if (style.styleSheet) {
+                    style.styleSheet.cssText = css;
+                } else {
+                    style.appendChild(document.createTextNode(css));
+                }
+                document.getElementById("dontComeOddsNine").appendChild(style);
+            }
+        });
+
+        document.getElementById("dontComeOddsTen").addEventListener("mouseover", function (){
+            if(user.bet.dontCome.ten>0){
+                var css = '#dontComeOddsTen:hover{ fill:rgba(0, 255, 0, .75); }';
+                var style = document.createElement('style');
+                if (style.styleSheet) {
+                    style.styleSheet.cssText = css;
+                } else {
+                    style.appendChild(document.createTextNode(css));
+                }
+                document.getElementById("dontComeOddsTen").appendChild(style);
+            }
+            else{
+                var css = '#dontComeOddsTen:hover{ fill:rgba(255, 0, 0, .75); }';
+                var style = document.createElement('style');
+                if (style.styleSheet) {
+                    style.styleSheet.cssText = css;
+                } else {
+                    style.appendChild(document.createTextNode(css));
+                }
+                document.getElementById("dontComeOddsTen").appendChild(style);
+            }
+        });
+
+        document.getElementById("dontComeOddsFour").addEventListener("click", function () {
+            var success = user.placeDontComeBetOdds(unit,4);
+    
+            if(!svg.getElementById("dontComeOddsFourBet") && success){
+                var element = document.createElementNS('http://www.w3.org/2000/svg','image');
+                element.setAttributeNS('http://www.w3.org/1999/xlink','href', 'images/unit'+unit+'.png');
+                element.setAttributeNS(null,'height','69');
+                element.setAttributeNS(null,'width','52');
+                element.setAttributeNS(null,'x',260);
+                element.setAttributeNS(null,'y',90);
+                element.setAttributeNS(null, 'visibility', 'visible');
+                element.setAttributeNS(null,"id","dontComeOddsFourBet");
+                svg.appendChild(element);
+    
+                var text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+                text.setAttributeNS(null, 'x', 280);
+                text.setAttributeNS(null, 'y', 130);
+                text.setAttributeNS(null, "id","dontComeOddsFourBetText")
+                svg.appendChild(text);
+            }
+            update();
+        });
+
+        document.getElementById("dontComeOddsFive").addEventListener("click", function () {
+            var success = user.placeDontComeBetOdds(unit,5);
+    
+            if(!svg.getElementById("dontComeOddsFiveBet") && success){
+                var element = document.createElementNS('http://www.w3.org/2000/svg','image');
+                element.setAttributeNS('http://www.w3.org/1999/xlink','href', 'images/unit'+unit+'.png');
+                element.setAttributeNS(null,'height','69');
+                element.setAttributeNS(null,'width','52');
+                element.setAttributeNS(null,'x',365);
+                element.setAttributeNS(null,'y',90);
+                element.setAttributeNS(null, 'visibility', 'visible');
+                element.setAttributeNS(null,"id","dontComeOddsFiveBet");
+                svg.appendChild(element);
+    
+                var text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+                text.setAttributeNS(null, 'x', 385);
+                text.setAttributeNS(null, 'y', 130);
+                text.setAttributeNS(null, "id","dontComeOddsFiveBetText")
+                svg.appendChild(text);
+            }
+            update();
+        });
+
+        document.getElementById("dontComeOddsSix").addEventListener("click", function () {
+            var success = user.placeDontComeBetOdds(unit,6);
+    
+            if(!svg.getElementById("dontComeOddsSixBet") && success){
+                var element = document.createElementNS('http://www.w3.org/2000/svg','image');
+                element.setAttributeNS('http://www.w3.org/1999/xlink','href', 'images/unit'+unit+'.png');
+                element.setAttributeNS(null,'height','69');
+                element.setAttributeNS(null,'width','52');
+                element.setAttributeNS(null,'x',465);
+                element.setAttributeNS(null,'y',90);
+                element.setAttributeNS(null, 'visibility', 'visible');
+                element.setAttributeNS(null,"id","dontComeOddsSixBet");
+                svg.appendChild(element);
+    
+                var text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+                text.setAttributeNS(null, 'x', 485);
+                text.setAttributeNS(null, 'y', 130);
+                text.setAttributeNS(null, "id","dontComeOddsSixBetText")
+                svg.appendChild(text);
+            }
+            update();
+        });
+
+        document.getElementById("dontComeOddsEight").addEventListener("click", function () {
+            var success = user.placeDontComeBetOdds(unit,8);
+    
+            if(!svg.getElementById("dontComeOddsEightBet") && success){
+                var element = document.createElementNS('http://www.w3.org/2000/svg','image');
+                element.setAttributeNS('http://www.w3.org/1999/xlink','href', 'images/unit'+unit+'.png');
+                element.setAttributeNS(null,'height','69');
+                element.setAttributeNS(null,'width','52');
+                element.setAttributeNS(null,'x',565);
+                element.setAttributeNS(null,'y',90);
+                element.setAttributeNS(null, 'visibility', 'visible');
+                element.setAttributeNS(null,"id","dontComeOddsEightBet");
+                svg.appendChild(element);
+    
+                var text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+                text.setAttributeNS(null, 'x', 585);
+                text.setAttributeNS(null, 'y', 130);
+                text.setAttributeNS(null, "id","dontComeOddsEightBetText")
+                svg.appendChild(text);
+            }
+            update();
+        });
+
+        document.getElementById("dontComeOddsNine").addEventListener("click", function () {
+            var success = user.placeDontComeBetOdds(unit,9);
+    
+            if(!svg.getElementById("dontComeOddsNineBet") && success){
+                var element = document.createElementNS('http://www.w3.org/2000/svg','image');
+                element.setAttributeNS('http://www.w3.org/1999/xlink','href', 'images/unit'+unit+'.png');
+                element.setAttributeNS(null,'height','69');
+                element.setAttributeNS(null,'width','52');
+                element.setAttributeNS(null,'x',665);
+                element.setAttributeNS(null,'y',90);
+                element.setAttributeNS(null, 'visibility', 'visible');
+                element.setAttributeNS(null,"id","dontComeOddsNineBet");
+                svg.appendChild(element);
+    
+                var text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+                text.setAttributeNS(null, 'x', 685);
+                text.setAttributeNS(null, 'y', 130);
+                text.setAttributeNS(null, "id","dontComeOddsNineBetText")
+                svg.appendChild(text);
+            }
+            update();
+        });
+
+        document.getElementById("dontComeOddsTen").addEventListener("click", function () {
+            var success = user.placeDontComeBetOdds(unit,10);
+    
+            if(!svg.getElementById("dontComeOddsTenBet") && success){
+                var element = document.createElementNS('http://www.w3.org/2000/svg','image');
+                element.setAttributeNS('http://www.w3.org/1999/xlink','href', 'images/unit'+unit+'.png');
+                element.setAttributeNS(null,'height','69');
+                element.setAttributeNS(null,'width','52');
+                element.setAttributeNS(null,'x',765);
+                element.setAttributeNS(null,'y',90);
+                element.setAttributeNS(null, 'visibility', 'visible');
+                element.setAttributeNS(null,"id","dontComeOddsTenBet");
+                svg.appendChild(element);
+    
+                var text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+                text.setAttributeNS(null, 'x', 785);
+                text.setAttributeNS(null, 'y', 130);
+                text.setAttributeNS(null, "id","dontComeOddsTenBetText")
+                svg.appendChild(text);
+            }
+            update();
+        });
 
 };
 
@@ -757,17 +1356,300 @@ function update(){
                 svg.getElementById("comeTenBetText").textContent = player.bet.come.ten;
             }
         }
+
+
+
+
+        if (svg.getElementById("dontComeBarBet")){
+            if(player.bet.dontCome.box==0){
+                svg.removeChild(svg.getElementById("dontComeBarBet"));
+                svg.removeChild(svg.getElementById("dontComeBarBetText"));
+            }
+            else{
+                svg.getElementById("dontComeBarBetText").textContent = player.bet.dontCome.box;
+            }
+        }
+
+        //for showing value of comebet in points
+        //if no chip but there is a bet
+        if (!svg.getElementById("dontComeFourBet") && player.bet.dontCome.four!=0){
+            //put chip there
+            var element = document.createElementNS('http://www.w3.org/2000/svg','image');
+            element.setAttributeNS('http://www.w3.org/1999/xlink','href', 'images/unit'+unit+'.png');
+            element.setAttributeNS(null,'height','69');
+            element.setAttributeNS(null,'width','52');
+            element.setAttributeNS(null,'x',260);
+            element.setAttributeNS(null,'y',75);
+            element.setAttributeNS(null, 'visibility', 'visible');
+            element.setAttributeNS(null,"id","dontComeFourBet");
+            svg.appendChild(element);
+    
+            var text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+            text.setAttributeNS(null, 'x', 280);
+            text.setAttributeNS(null, 'y', 115);
+            text.setAttributeNS(null, "id","dontComeFourBetText")
+            svg.appendChild(text);
+        }
+        if (svg.getElementById("dontComeFourBet")){
+            if(player.bet.dontCome.four==0){
+                svg.removeChild(svg.getElementById("dontComeFourBet"));
+                svg.removeChild(svg.getElementById("dontComeFourBetText"));
+            }
+            else{
+                svg.getElementById("dontComeFourBetText").textContent = player.bet.dontCome.four;
+            }
+        }
+
+
+        if (!svg.getElementById("dontComeFiveBet") && player.bet.dontCome.five!=0){
+            var element = document.createElementNS('http://www.w3.org/2000/svg','image');
+            element.setAttributeNS('http://www.w3.org/1999/xlink','href', 'images/unit'+unit+'.png');
+            element.setAttributeNS(null,'height','69');
+            element.setAttributeNS(null,'width','52');
+            element.setAttributeNS(null,'x',365);
+            element.setAttributeNS(null,'y',75);
+            element.setAttributeNS(null, 'visibility', 'visible');
+            element.setAttributeNS(null,"id","dontComeFiveBet");
+            svg.appendChild(element);
+    
+            var text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+            text.setAttributeNS(null, 'x', 385);
+            text.setAttributeNS(null, 'y', 115);
+            text.setAttributeNS(null, "id","dontComeFiveBetText")
+            svg.appendChild(text);
+        }
+        if (svg.getElementById("dontComeFiveBet")){
+            if(player.bet.dontCome.five==0){
+                svg.removeChild(svg.getElementById("dontComeFiveBet"));
+                svg.removeChild(svg.getElementById("dontComeFiveBetText"));
+            }
+            else{
+                svg.getElementById("dontComeFiveBetText").textContent = player.bet.dontCome.five;
+            }
+        }
+
+        if (!svg.getElementById("dontComeSixBet") && player.bet.dontCome.six!=0){
+            var element = document.createElementNS('http://www.w3.org/2000/svg','image');
+            element.setAttributeNS('http://www.w3.org/1999/xlink','href', 'images/unit'+unit+'.png');
+            element.setAttributeNS(null,'height','69');
+            element.setAttributeNS(null,'width','52');
+            element.setAttributeNS(null,'x',465);
+            element.setAttributeNS(null,'y',75);
+            element.setAttributeNS(null, 'visibility', 'visible');
+            element.setAttributeNS(null,"id","dontComeSixBet");
+            svg.appendChild(element);
+    
+            var text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+            text.setAttributeNS(null, 'x', 485);
+            text.setAttributeNS(null, 'y', 115);
+            text.setAttributeNS(null, "id","dontComeSixBetText")
+            svg.appendChild(text);
+        }
+        if (svg.getElementById("dontComeSixBet")){
+            if(player.bet.dontCome.six==0){
+                svg.removeChild(svg.getElementById("dontComeSixBet"));
+                svg.removeChild(svg.getElementById("dontComeSixBetText"));
+            }
+            else{
+                svg.getElementById("dontComeSixBetText").textContent = player.bet.dontCome.six;
+            }
+        }
+
+
+        if (!svg.getElementById("dontComeEightBet") && player.bet.dontCome.eight!=0){
+            var element = document.createElementNS('http://www.w3.org/2000/svg','image');
+            element.setAttributeNS('http://www.w3.org/1999/xlink','href', 'images/unit'+unit+'.png');
+            element.setAttributeNS(null,'height','69');
+            element.setAttributeNS(null,'width','52');
+            element.setAttributeNS(null,'x',565);
+            element.setAttributeNS(null,'y',75);
+            element.setAttributeNS(null, 'visibility', 'visible');
+            element.setAttributeNS(null,"id","dontComeEightBet");
+            svg.appendChild(element);
+    
+            var text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+            text.setAttributeNS(null, 'x', 585);
+            text.setAttributeNS(null, 'y', 115);
+            text.setAttributeNS(null, "id","dontComeEightBetText")
+            svg.appendChild(text);
+        }
+        if (svg.getElementById("dontComeEightBet")){
+            if(player.bet.dontCome.eight==0){
+                svg.removeChild(svg.getElementById("dontComeEightBet"));
+                svg.removeChild(svg.getElementById("dontComeEightBetText"));
+            }
+            else{
+                svg.getElementById("dontComeEightBetText").textContent = player.bet.dontCome.eight;
+            }
+        }
+        
+
+        if (!svg.getElementById("dontComeNineBet") && player.bet.dontCome.nine!=0){
+            var element = document.createElementNS('http://www.w3.org/2000/svg','image');
+            element.setAttributeNS('http://www.w3.org/1999/xlink','href', 'images/unit'+unit+'.png');
+            element.setAttributeNS(null,'height','69');
+            element.setAttributeNS(null,'width','52');
+            element.setAttributeNS(null,'x',665);
+            element.setAttributeNS(null,'y',75);
+            element.setAttributeNS(null, 'visibility', 'visible');
+            element.setAttributeNS(null,"id","dontComeNineBet");
+            svg.appendChild(element);
+    
+            var text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+            text.setAttributeNS(null, 'x', 685);
+            text.setAttributeNS(null, 'y', 115);
+            text.setAttributeNS(null, "id","dontComeNineBetText")
+            svg.appendChild(text);
+        }
+        if (svg.getElementById("dontComeNineBet")){
+            if(player.bet.dontCome.nine==0){
+                svg.removeChild(svg.getElementById("dontComeNineBet"));
+                svg.removeChild(svg.getElementById("dontComeNineBetText"));
+            }
+            else{
+                svg.getElementById("dontComeNineBetText").textContent = player.bet.dontCome.nine;
+            }
+        }
+
+        if (!svg.getElementById("dontComeTenBet") && player.bet.dontCome.ten!=0){
+            var element = document.createElementNS('http://www.w3.org/2000/svg','image');
+            element.setAttributeNS('http://www.w3.org/1999/xlink','href', 'images/unit'+unit+'.png');
+            element.setAttributeNS(null,'height','69');
+            element.setAttributeNS(null,'width','52');
+            element.setAttributeNS(null,'x',765);
+            element.setAttributeNS(null,'y',75);
+            element.setAttributeNS(null, 'visibility', 'visible');
+            element.setAttributeNS(null,"id","dontComeTenBet");
+            svg.appendChild(element);
+    
+            var text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+            text.setAttributeNS(null, 'x', 785);
+            text.setAttributeNS(null, 'y', 115);
+            text.setAttributeNS(null, "id","dontComeTenBetText")
+            svg.appendChild(text);
+        }
+        if (svg.getElementById("dontComeTenBet")){
+            if(player.bet.dontCome.ten==0){
+                svg.removeChild(svg.getElementById("dontComeTenBet"));
+                svg.removeChild(svg.getElementById("dontComeTenBetText"));
+            }
+            else{
+                svg.getElementById("dontComeTenBetText").textContent = player.bet.dontCome.ten;
+            }
+        }
+
+        if (svg.getElementById("comeOddsFourBet")){
+            if(player.bet.come.odds.four==0){
+                svg.removeChild(svg.getElementById("comeOddsFourBet"));
+                svg.removeChild(svg.getElementById("comeOddsFourBetText"));
+            }
+            else{
+                svg.getElementById("comeOddsFourBetText").textContent = player.bet.come.odds.four;
+            }
+        }
+        if (svg.getElementById("comeOddsFiveBet")){
+            if(player.bet.come.odds.five==0){
+                svg.removeChild(svg.getElementById("comeOddsFiveBet"));
+                svg.removeChild(svg.getElementById("comeOddsFiveBetText"));
+            }
+            else{
+                svg.getElementById("comeOddsFiveBetText").textContent = player.bet.come.odds.five;
+            }
+        }
+        if (svg.getElementById("comeOddsSixBet")){
+            if(player.bet.come.odds.six==0){
+                svg.removeChild(svg.getElementById("comeOddsSixBet"));
+                svg.removeChild(svg.getElementById("comeOddsSixBetText"));
+            }
+            else{
+                svg.getElementById("comeOddsSixBetText").textContent = player.bet.come.odds.six;
+            }
+        }
+        if (svg.getElementById("comeOddsEightBet")){
+            if(player.bet.come.odds.eight==0){
+                svg.removeChild(svg.getElementById("comeOddsEightBet"));
+                svg.removeChild(svg.getElementById("comeOddsEightBetText"));
+            }
+            else{
+                svg.getElementById("comeOddsEightBetText").textContent = player.bet.come.odds.eight;
+            }
+        }
+        if (svg.getElementById("comeOddsNineBet")){
+            if(player.bet.come.odds.nine==0){
+                svg.removeChild(svg.getElementById("comeOddsNineBet"));
+                svg.removeChild(svg.getElementById("comeOddsNineBetText"));
+            }
+            else{
+                svg.getElementById("comeOddsNineBetText").textContent = player.bet.come.odds.nine;
+            }
+        }
+        if (svg.getElementById("comeOddsTenBet")){
+            if(player.bet.come.odds.ten==0){
+                svg.removeChild(svg.getElementById("comeOddsTenBet"));
+                svg.removeChild(svg.getElementById("comeOddsTenBetText"));
+            }
+            else{
+                svg.getElementById("comeOddsTenBetText").textContent = player.bet.come.odds.ten;
+            }
+        }
+
+        if (svg.getElementById("dontComeOddsFourBet")){
+            if(player.bet.dontCome.odds.four==0){
+                svg.removeChild(svg.getElementById("dontComeOddsFourBet"));
+                svg.removeChild(svg.getElementById("dontComeOddsFourBetText"));
+            }
+            else{
+                svg.getElementById("dontComeOddsFourBetText").textContent = player.bet.dontCome.odds.four;
+            }
+        }
+        if (svg.getElementById("dontComeOddsFiveBet")){
+            if(player.bet.dontCome.odds.five==0){
+                svg.removeChild(svg.getElementById("dontComeOddsFiveBet"));
+                svg.removeChild(svg.getElementById("dontComeOddsFiveBetText"));
+            }
+            else{
+                svg.getElementById("dontComeOddsFiveBetText").textContent = player.bet.dontCome.odds.five;
+            }
+        }
+        if (svg.getElementById("dontComeOddsSixBet")){
+            if(player.bet.dontCome.odds.six==0){
+                svg.removeChild(svg.getElementById("dontComeOddsSixBet"));
+                svg.removeChild(svg.getElementById("dontComeOddsSixBetText"));
+            }
+            else{
+                svg.getElementById("dontComeOddsSixBetText").textContent = player.bet.dontCome.odds.six;
+            }
+        }
+        if (svg.getElementById("dontComeOddsEightBet")){
+            if(player.bet.dontCome.odds.eight==0){
+                svg.removeChild(svg.getElementById("dontComeOddsEightBet"));
+                svg.removeChild(svg.getElementById("dontComeOddsEightBetText"));
+            }
+            else{
+                svg.getElementById("dontComeOddsEightBetText").textContent = player.bet.dontCome.odds.eight;
+            }
+        }
+        if (svg.getElementById("dontComeOddsNineBet")){
+            if(player.bet.dontCome.odds.nine==0){
+                svg.removeChild(svg.getElementById("dontComeOddsNineBet"));
+                svg.removeChild(svg.getElementById("dontComeOddsNineBetText"));
+            }
+            else{
+                svg.getElementById("dontComeOddsNineBetText").textContent = player.bet.dontCome.odds.nine;
+            }
+        }
+        if (svg.getElementById("dontComeOddsTenBet")){
+            if(player.bet.dontCome.odds.ten==0){
+                svg.removeChild(svg.getElementById("dontComeOddsTenBet"));
+                svg.removeChild(svg.getElementById("dontComeOddsTenBetText"));
+            }
+            else{
+                svg.getElementById("dontComeOddsTenBetText").textContent = player.bet.dontCome.odds.ten;
+            }
+        }
     }
-    /*
-    //for showing value of comebet in points
-    //if no chip but there is a bet
-    if (!svg.getElementById("comeBetFour") && player.bet.come.four!=0){
-        //put chip there
-    }
-    else if(player.bet.come.four!=0){
-        //update bet
-    }
-    */
+    
+
     
     
     switch (point) {
@@ -808,6 +1690,4 @@ function update(){
     }
     
 }
-
-
 
