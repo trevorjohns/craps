@@ -65,7 +65,7 @@ window.onload = function() {
     });
 
 
-    document.getElementById("bigSix").addEventListener("click",function () {
+    document.getElementById("bigSix").addEventListener("click",function (event) {
         var success = user.placeBigSixBet(unit);
 
         if (!svg.getElementById("bigSixBet") && success) {
@@ -90,7 +90,7 @@ window.onload = function() {
     });
 
 
-    document.getElementById("bigEight").addEventListener("click",function () {
+    document.getElementById("bigEight").addEventListener("click",function (event) {
         var success = user.placeBigEightBet(unit);
 
         if (!svg.getElementById("bigEightBet") && success) {
@@ -113,7 +113,7 @@ window.onload = function() {
         update();
     });
 
-    document.getElementById("placeFour").addEventListener("click",function () {
+    document.getElementById("placeFour").addEventListener("click",function (event) {
         var success = user.placePlaceBet(unit,4);
 
         if (!svg.getElementById("placeFourBet") && success) {
@@ -136,7 +136,7 @@ window.onload = function() {
         update();
     });
 
-    document.getElementById("placeFive").addEventListener("click",function () {
+    document.getElementById("placeFive").addEventListener("click",function (event) {
         var success = user.placePlaceBet(unit,5);
 
         if (!svg.getElementById("placeFiveBet") && success) {
@@ -159,7 +159,7 @@ window.onload = function() {
         update();
     });
 
-    document.getElementById("placeSix").addEventListener("click",function () {
+    document.getElementById("placeSix").addEventListener("click",function (event) {
         var success = user.placePlaceBet(unit,6);
 
         if (!svg.getElementById("placeSixBet") && success) {
@@ -182,7 +182,7 @@ window.onload = function() {
         update();
     });
 
-    document.getElementById("placeEight").addEventListener("click",function () {
+    document.getElementById("placeEight").addEventListener("click",function (event) {
         var success = user.placePlaceBet(unit,8);
 
         if (!svg.getElementById("placeEightBet") && success) {
@@ -205,7 +205,7 @@ window.onload = function() {
         update();
     });
 
-    document.getElementById("placeNine").addEventListener("click",function () {
+    document.getElementById("placeNine").addEventListener("click",function (event) {
         var success = user.placePlaceBet(unit,9);
 
         if (!svg.getElementById("placeNineBet") && success) {
@@ -228,7 +228,7 @@ window.onload = function() {
         update();
     });
 
-    document.getElementById("placeTen").addEventListener("click",function () {
+    document.getElementById("placeTen").addEventListener("click",function (event) {
         var success = user.placePlaceBet(unit,10);
 
         if (!svg.getElementById("placeTenBet") && success) {
@@ -251,7 +251,7 @@ window.onload = function() {
         update();
     });
 
-    document.getElementById("comeBar").addEventListener("click",function () {
+    document.getElementById("comeBar").addEventListener("click",function (event) {
         var success = user.placeComeBet(unit);
 
         if (!svg.getElementById("comeBarBet") && success) {
@@ -275,7 +275,7 @@ window.onload = function() {
     });
 
 
-    document.getElementById("dontComeBar").addEventListener("click",function () {
+    document.getElementById("dontComeBar").addEventListener("click",function (event) {
         var success = user.placeDontComeBet(unit);
 
         if (!svg.getElementById("dontComeBarBet") && success) {
@@ -299,7 +299,7 @@ window.onload = function() {
     });
 
 
-    document.getElementById("rollButton").addEventListener("click",function () {
+    document.getElementById("rollButton").addEventListener("click",function (event) {
         roll = gameRoll(point);
         var element = document.createElementNS('http://www.w3.org/2000/svg','image');
         element.setAttributeNS('http://www.w3.org/1999/xlink','href', 'images/dice'+roll.die1+'.png');
@@ -322,7 +322,7 @@ window.onload = function() {
         update();
     });
 
-    document.getElementById("passLine").addEventListener("click", function () {
+    document.getElementById("passLine").addEventListener("click", function (event) {
         var success = user.placePassLineBet(unit);
 
         if(!svg.getElementById("passLineBet") && success){
@@ -345,7 +345,7 @@ window.onload = function() {
         update();
     });
 
-    document.getElementById("dontPassBar").addEventListener("click", function () {
+    document.getElementById("dontPassBar").addEventListener("click", function (event) {
         var success = user.placeDontPassLineBet(unit);
 
         if(!svg.getElementById("dontPassBarBet") && success){
@@ -368,7 +368,7 @@ window.onload = function() {
         update();
     });
 
-    document.getElementById("dontPassBar2").addEventListener("click", function () {
+    document.getElementById("dontPassBar2").addEventListener("click", function (event) {
         var success = user.placeDontPassLineBet(unit);
 
         if(!svg.getElementById("dontPassBarBet") && success){
