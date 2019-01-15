@@ -40,11 +40,11 @@ window.onload = function() {
     update();
 
 
-    document.getElementById("fieldBar").addEventListener("click",function () {
+    document.getElementById("fieldBar").addEventListener("click",function (event) {
         var success = user.placeFieldBet(unit);
 
         if (!svg.getElementById("fieldBet") && success) {
-            
+
             var element = document.createElementNS('http://www.w3.org/2000/svg','image');
             element.setAttributeNS('http://www.w3.org/1999/xlink','href', 'images/unit'+unit+'.png');
             element.setAttributeNS(null,'height','69');
@@ -54,7 +54,7 @@ window.onload = function() {
             element.setAttributeNS(null, 'visibility', 'visible');
             element.setAttributeNS(null,"id","fieldBet");
             svg.appendChild(element);
-    
+
             var text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
             text.setAttributeNS(null, 'x', event.clientX-5);
             text.setAttributeNS(null, 'y', event.clientY+15);
@@ -79,7 +79,7 @@ window.onload = function() {
             element.setAttributeNS(null, 'visibility', 'visible');
             element.setAttributeNS(null,"id","bigSixBet");
             svg.appendChild(element);
-    
+
             var text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
             text.setAttributeNS(null, 'x', event.clientX-5);
             text.setAttributeNS(null, 'y', event.clientY+15);
@@ -103,7 +103,7 @@ window.onload = function() {
             element.setAttributeNS(null, 'visibility', 'visible');
             element.setAttributeNS(null,"id","bigEightBet");
             svg.appendChild(element);
-    
+
             var text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
             text.setAttributeNS(null, 'x', event.clientX-5);
             text.setAttributeNS(null, 'y', event.clientY+15);
@@ -126,7 +126,7 @@ window.onload = function() {
             element.setAttributeNS(null, 'visibility', 'visible');
             element.setAttributeNS(null,"id","placeFourBet");
             svg.appendChild(element);
-    
+
             var text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
             text.setAttributeNS(null, 'x', event.clientX-5);
             text.setAttributeNS(null, 'y', event.clientY+15);
@@ -149,7 +149,7 @@ window.onload = function() {
             element.setAttributeNS(null, 'visibility', 'visible');
             element.setAttributeNS(null,"id","placeFiveBet");
             svg.appendChild(element);
-    
+
             var text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
             text.setAttributeNS(null, 'x', event.clientX-5);
             text.setAttributeNS(null, 'y', event.clientY+15);
@@ -172,7 +172,7 @@ window.onload = function() {
             element.setAttributeNS(null, 'visibility', 'visible');
             element.setAttributeNS(null,"id","placeSixBet");
             svg.appendChild(element);
-    
+
             var text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
             text.setAttributeNS(null, 'x', event.clientX-5);
             text.setAttributeNS(null, 'y', event.clientY+15);
@@ -195,7 +195,7 @@ window.onload = function() {
             element.setAttributeNS(null, 'visibility', 'visible');
             element.setAttributeNS(null,"id","placeEightBet");
             svg.appendChild(element);
-    
+
             var text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
             text.setAttributeNS(null, 'x', event.clientX-5);
             text.setAttributeNS(null, 'y', event.clientY+15);
@@ -218,7 +218,7 @@ window.onload = function() {
             element.setAttributeNS(null, 'visibility', 'visible');
             element.setAttributeNS(null,"id","placeNineBet");
             svg.appendChild(element);
-    
+
             var text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
             text.setAttributeNS(null, 'x', event.clientX-5);
             text.setAttributeNS(null, 'y', event.clientY+15);
@@ -241,7 +241,7 @@ window.onload = function() {
             element.setAttributeNS(null, 'visibility', 'visible');
             element.setAttributeNS(null,"id","placeTenBet");
             svg.appendChild(element);
-    
+
             var text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
             text.setAttributeNS(null, 'x', event.clientX-5);
             text.setAttributeNS(null, 'y', event.clientY+15);
@@ -264,7 +264,7 @@ window.onload = function() {
             element.setAttributeNS(null, 'visibility', 'visible');
             element.setAttributeNS(null,"id","comeBarBet");
             svg.appendChild(element);
-    
+
             var text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
             text.setAttributeNS(null, 'x', event.clientX-5);
             text.setAttributeNS(null, 'y', event.clientY+15);
@@ -288,7 +288,7 @@ window.onload = function() {
             element.setAttributeNS(null, 'visibility', 'visible');
             element.setAttributeNS(null,"id","dontComeBarBet");
             svg.appendChild(element);
-    
+
             var text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
             text.setAttributeNS(null, 'x', event.clientX-5);
             text.setAttributeNS(null, 'y', event.clientY+15);
@@ -297,7 +297,7 @@ window.onload = function() {
         }
         update();
     });
-    
+
 
     document.getElementById("rollButton").addEventListener("click",function () {
         roll = gameRoll(point);
@@ -391,7 +391,7 @@ window.onload = function() {
         update();
     });
 
-    
+
 
     document.getElementById("passLine").addEventListener("mouseover", function (){
         if(point==null){
@@ -508,7 +508,7 @@ window.onload = function() {
         }
     });
 
-    
+
 
         document.getElementById("comeOddsFour").addEventListener("mouseover", function (){
             if(user.bet.come.four>0){
@@ -647,10 +647,10 @@ window.onload = function() {
                 document.getElementById("comeOddsTen").appendChild(style);
             }
         });
-    
+
         document.getElementById("comeOddsFour").addEventListener("click", function () {
             var success = user.placeComeBetOdds(unit,4);
-    
+
             if(!svg.getElementById("comeOddsFourBet") && success){
                 var element = document.createElementNS('http://www.w3.org/2000/svg','image');
                 element.setAttributeNS('http://www.w3.org/1999/xlink','href', 'images/unit'+unit+'.png');
@@ -661,7 +661,7 @@ window.onload = function() {
                 element.setAttributeNS(null, 'visibility', 'visible');
                 element.setAttributeNS(null,"id","comeOddsFourBet");
                 svg.appendChild(element);
-    
+
                 var text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
                 text.setAttributeNS(null, 'x', 280);
                 text.setAttributeNS(null, 'y', 160);
@@ -673,7 +673,7 @@ window.onload = function() {
 
         document.getElementById("comeOddsFive").addEventListener("click", function () {
             var success = user.placeComeBetOdds(unit,5);
-    
+
             if(!svg.getElementById("comeOddsFiveBet") && success){
                 var element = document.createElementNS('http://www.w3.org/2000/svg','image');
                 element.setAttributeNS('http://www.w3.org/1999/xlink','href', 'images/unit'+unit+'.png');
@@ -684,7 +684,7 @@ window.onload = function() {
                 element.setAttributeNS(null, 'visibility', 'visible');
                 element.setAttributeNS(null,"id","comeOddsFiveBet");
                 svg.appendChild(element);
-    
+
                 var text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
                 text.setAttributeNS(null, 'x', 385);
                 text.setAttributeNS(null, 'y', 160);
@@ -696,7 +696,7 @@ window.onload = function() {
 
         document.getElementById("comeOddsSix").addEventListener("click", function () {
             var success = user.placeComeBetOdds(unit,6);
-    
+
             if(!svg.getElementById("comeOddsSixBet") && success){
                 var element = document.createElementNS('http://www.w3.org/2000/svg','image');
                 element.setAttributeNS('http://www.w3.org/1999/xlink','href', 'images/unit'+unit+'.png');
@@ -707,7 +707,7 @@ window.onload = function() {
                 element.setAttributeNS(null, 'visibility', 'visible');
                 element.setAttributeNS(null,"id","comeOddsSixBet");
                 svg.appendChild(element);
-    
+
                 var text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
                 text.setAttributeNS(null, 'x', 485);
                 text.setAttributeNS(null, 'y', 160);
@@ -719,7 +719,7 @@ window.onload = function() {
 
         document.getElementById("comeOddsEight").addEventListener("click", function () {
             var success = user.placeComeBetOdds(unit,8);
-    
+
             if(!svg.getElementById("comeOddsEightBet") && success){
                 var element = document.createElementNS('http://www.w3.org/2000/svg','image');
                 element.setAttributeNS('http://www.w3.org/1999/xlink','href', 'images/unit'+unit+'.png');
@@ -730,7 +730,7 @@ window.onload = function() {
                 element.setAttributeNS(null, 'visibility', 'visible');
                 element.setAttributeNS(null,"id","comeOddsEightBet");
                 svg.appendChild(element);
-    
+
                 var text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
                 text.setAttributeNS(null, 'x', 585);
                 text.setAttributeNS(null, 'y', 160);
@@ -742,7 +742,7 @@ window.onload = function() {
 
         document.getElementById("comeOddsNine").addEventListener("click", function () {
             var success = user.placeComeBetOdds(unit,9);
-    
+
             if(!svg.getElementById("comeOddsNineBet") && success){
                 var element = document.createElementNS('http://www.w3.org/2000/svg','image');
                 element.setAttributeNS('http://www.w3.org/1999/xlink','href', 'images/unit'+unit+'.png');
@@ -753,7 +753,7 @@ window.onload = function() {
                 element.setAttributeNS(null, 'visibility', 'visible');
                 element.setAttributeNS(null,"id","comeOddsNineBet");
                 svg.appendChild(element);
-    
+
                 var text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
                 text.setAttributeNS(null, 'x', 685);
                 text.setAttributeNS(null, 'y', 160);
@@ -765,7 +765,7 @@ window.onload = function() {
 
         document.getElementById("comeOddsTen").addEventListener("click", function () {
             var success = user.placeComeBetOdds(unit,10);
-    
+
             if(!svg.getElementById("comeOddsTenBet") && success){
                 var element = document.createElementNS('http://www.w3.org/2000/svg','image');
                 element.setAttributeNS('http://www.w3.org/1999/xlink','href', 'images/unit'+unit+'.png');
@@ -776,7 +776,7 @@ window.onload = function() {
                 element.setAttributeNS(null, 'visibility', 'visible');
                 element.setAttributeNS(null,"id","comeOddsTenBet");
                 svg.appendChild(element);
-    
+
                 var text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
                 text.setAttributeNS(null, 'x', 785);
                 text.setAttributeNS(null, 'y', 160);
@@ -927,7 +927,7 @@ window.onload = function() {
 
         document.getElementById("dontComeOddsFour").addEventListener("click", function () {
             var success = user.placeDontComeBetOdds(unit,4);
-    
+
             if(!svg.getElementById("dontComeOddsFourBet") && success){
                 var element = document.createElementNS('http://www.w3.org/2000/svg','image');
                 element.setAttributeNS('http://www.w3.org/1999/xlink','href', 'images/unit'+unit+'.png');
@@ -938,7 +938,7 @@ window.onload = function() {
                 element.setAttributeNS(null, 'visibility', 'visible');
                 element.setAttributeNS(null,"id","dontComeOddsFourBet");
                 svg.appendChild(element);
-    
+
                 var text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
                 text.setAttributeNS(null, 'x', 280);
                 text.setAttributeNS(null, 'y', 130);
@@ -950,7 +950,7 @@ window.onload = function() {
 
         document.getElementById("dontComeOddsFive").addEventListener("click", function () {
             var success = user.placeDontComeBetOdds(unit,5);
-    
+
             if(!svg.getElementById("dontComeOddsFiveBet") && success){
                 var element = document.createElementNS('http://www.w3.org/2000/svg','image');
                 element.setAttributeNS('http://www.w3.org/1999/xlink','href', 'images/unit'+unit+'.png');
@@ -961,7 +961,7 @@ window.onload = function() {
                 element.setAttributeNS(null, 'visibility', 'visible');
                 element.setAttributeNS(null,"id","dontComeOddsFiveBet");
                 svg.appendChild(element);
-    
+
                 var text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
                 text.setAttributeNS(null, 'x', 385);
                 text.setAttributeNS(null, 'y', 130);
@@ -973,7 +973,7 @@ window.onload = function() {
 
         document.getElementById("dontComeOddsSix").addEventListener("click", function () {
             var success = user.placeDontComeBetOdds(unit,6);
-    
+
             if(!svg.getElementById("dontComeOddsSixBet") && success){
                 var element = document.createElementNS('http://www.w3.org/2000/svg','image');
                 element.setAttributeNS('http://www.w3.org/1999/xlink','href', 'images/unit'+unit+'.png');
@@ -984,7 +984,7 @@ window.onload = function() {
                 element.setAttributeNS(null, 'visibility', 'visible');
                 element.setAttributeNS(null,"id","dontComeOddsSixBet");
                 svg.appendChild(element);
-    
+
                 var text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
                 text.setAttributeNS(null, 'x', 485);
                 text.setAttributeNS(null, 'y', 130);
@@ -996,7 +996,7 @@ window.onload = function() {
 
         document.getElementById("dontComeOddsEight").addEventListener("click", function () {
             var success = user.placeDontComeBetOdds(unit,8);
-    
+
             if(!svg.getElementById("dontComeOddsEightBet") && success){
                 var element = document.createElementNS('http://www.w3.org/2000/svg','image');
                 element.setAttributeNS('http://www.w3.org/1999/xlink','href', 'images/unit'+unit+'.png');
@@ -1007,7 +1007,7 @@ window.onload = function() {
                 element.setAttributeNS(null, 'visibility', 'visible');
                 element.setAttributeNS(null,"id","dontComeOddsEightBet");
                 svg.appendChild(element);
-    
+
                 var text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
                 text.setAttributeNS(null, 'x', 585);
                 text.setAttributeNS(null, 'y', 130);
@@ -1019,7 +1019,7 @@ window.onload = function() {
 
         document.getElementById("dontComeOddsNine").addEventListener("click", function () {
             var success = user.placeDontComeBetOdds(unit,9);
-    
+
             if(!svg.getElementById("dontComeOddsNineBet") && success){
                 var element = document.createElementNS('http://www.w3.org/2000/svg','image');
                 element.setAttributeNS('http://www.w3.org/1999/xlink','href', 'images/unit'+unit+'.png');
@@ -1030,7 +1030,7 @@ window.onload = function() {
                 element.setAttributeNS(null, 'visibility', 'visible');
                 element.setAttributeNS(null,"id","dontComeOddsNineBet");
                 svg.appendChild(element);
-    
+
                 var text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
                 text.setAttributeNS(null, 'x', 685);
                 text.setAttributeNS(null, 'y', 130);
@@ -1042,7 +1042,7 @@ window.onload = function() {
 
         document.getElementById("dontComeOddsTen").addEventListener("click", function () {
             var success = user.placeDontComeBetOdds(unit,10);
-    
+
             if(!svg.getElementById("dontComeOddsTenBet") && success){
                 var element = document.createElementNS('http://www.w3.org/2000/svg','image');
                 element.setAttributeNS('http://www.w3.org/1999/xlink','href', 'images/unit'+unit+'.png');
@@ -1053,7 +1053,7 @@ window.onload = function() {
                 element.setAttributeNS(null, 'visibility', 'visible');
                 element.setAttributeNS(null,"id","dontComeOddsTenBet");
                 svg.appendChild(element);
-    
+
                 var text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
                 text.setAttributeNS(null, 'x', 785);
                 text.setAttributeNS(null, 'y', 130);
@@ -1070,7 +1070,7 @@ function update(){
     document.getElementById("wager").innerHTML = user.wager;
     document.getElementById("money").innerHTML = user.money;
     //console.log(point);
-    
+
     for (player of players) {
         if (svg.getElementById("fieldBet")){
             if(player.bet.field==0){
@@ -1205,7 +1205,7 @@ function update(){
             element.setAttributeNS(null, 'visibility', 'visible');
             element.setAttributeNS(null,"id","comeFourBet");
             svg.appendChild(element);
-    
+
             var text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
             text.setAttributeNS(null, 'x', 280);
             text.setAttributeNS(null, 'y', 175);
@@ -1232,7 +1232,7 @@ function update(){
             element.setAttributeNS(null, 'visibility', 'visible');
             element.setAttributeNS(null,"id","comeFiveBet");
             svg.appendChild(element);
-    
+
             var text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
             text.setAttributeNS(null, 'x', 385);
             text.setAttributeNS(null, 'y', 175);
@@ -1259,7 +1259,7 @@ function update(){
             element.setAttributeNS(null, 'visibility', 'visible');
             element.setAttributeNS(null,"id","comeSixBet");
             svg.appendChild(element);
-    
+
             var text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
             text.setAttributeNS(null, 'x', 485);
             text.setAttributeNS(null, 'y', 175);
@@ -1286,7 +1286,7 @@ function update(){
             element.setAttributeNS(null, 'visibility', 'visible');
             element.setAttributeNS(null,"id","comeEightBet");
             svg.appendChild(element);
-    
+
             var text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
             text.setAttributeNS(null, 'x', 585);
             text.setAttributeNS(null, 'y', 175);
@@ -1313,7 +1313,7 @@ function update(){
             element.setAttributeNS(null, 'visibility', 'visible');
             element.setAttributeNS(null,"id","comeNineBet");
             svg.appendChild(element);
-    
+
             var text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
             text.setAttributeNS(null, 'x', 685);
             text.setAttributeNS(null, 'y', 175);
@@ -1340,7 +1340,7 @@ function update(){
             element.setAttributeNS(null, 'visibility', 'visible');
             element.setAttributeNS(null,"id","comeTenBet");
             svg.appendChild(element);
-    
+
             var text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
             text.setAttributeNS(null, 'x', 785);
             text.setAttributeNS(null, 'y', 175);
@@ -1383,7 +1383,7 @@ function update(){
             element.setAttributeNS(null, 'visibility', 'visible');
             element.setAttributeNS(null,"id","dontComeFourBet");
             svg.appendChild(element);
-    
+
             var text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
             text.setAttributeNS(null, 'x', 280);
             text.setAttributeNS(null, 'y', 115);
@@ -1411,7 +1411,7 @@ function update(){
             element.setAttributeNS(null, 'visibility', 'visible');
             element.setAttributeNS(null,"id","dontComeFiveBet");
             svg.appendChild(element);
-    
+
             var text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
             text.setAttributeNS(null, 'x', 385);
             text.setAttributeNS(null, 'y', 115);
@@ -1438,7 +1438,7 @@ function update(){
             element.setAttributeNS(null, 'visibility', 'visible');
             element.setAttributeNS(null,"id","dontComeSixBet");
             svg.appendChild(element);
-    
+
             var text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
             text.setAttributeNS(null, 'x', 485);
             text.setAttributeNS(null, 'y', 115);
@@ -1466,7 +1466,7 @@ function update(){
             element.setAttributeNS(null, 'visibility', 'visible');
             element.setAttributeNS(null,"id","dontComeEightBet");
             svg.appendChild(element);
-    
+
             var text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
             text.setAttributeNS(null, 'x', 585);
             text.setAttributeNS(null, 'y', 115);
@@ -1482,7 +1482,7 @@ function update(){
                 svg.getElementById("dontComeEightBetText").textContent = player.bet.dontCome.eight;
             }
         }
-        
+
 
         if (!svg.getElementById("dontComeNineBet") && player.bet.dontCome.nine!=0){
             var element = document.createElementNS('http://www.w3.org/2000/svg','image');
@@ -1494,7 +1494,7 @@ function update(){
             element.setAttributeNS(null, 'visibility', 'visible');
             element.setAttributeNS(null,"id","dontComeNineBet");
             svg.appendChild(element);
-    
+
             var text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
             text.setAttributeNS(null, 'x', 685);
             text.setAttributeNS(null, 'y', 115);
@@ -1521,7 +1521,7 @@ function update(){
             element.setAttributeNS(null, 'visibility', 'visible');
             element.setAttributeNS(null,"id","dontComeTenBet");
             svg.appendChild(element);
-    
+
             var text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
             text.setAttributeNS(null, 'x', 785);
             text.setAttributeNS(null, 'y', 115);
@@ -1648,10 +1648,10 @@ function update(){
             }
         }
     }
-    
 
-    
-    
+
+
+
     switch (point) {
         case null:
             svg.getElementById("offPuck").setAttributeNS(null, 'visibility', 'visible');
@@ -1688,6 +1688,5 @@ function update(){
             svg.getElementById("onPuck").setAttributeNS(null,'x','793');
             break;
     }
-    
-}
 
+}

@@ -1,0 +1,291 @@
+.hidden {
+    display: none;
+}
+
+#board {
+    background-color: rgb(0, 153, 51);
+    background-image: url(craps_table.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 1300px;
+    height: 650px
+}
+
+#controls {
+    position: relative;
+    width: 1300px;
+    height: 100px;
+    background-color: rgb(14, 51, 5);
+
+}
+
+.wholeBoard{
+    position: absolute;
+    top: 8px;
+    left: 9px;
+    height: inherit;
+    width: inherit;
+}
+
+#fieldBar {
+    cursor: pointer;
+    fill:rgba(0, 255, 0, 0);
+}
+
+#fieldBar:hover {
+    fill:rgba(0, 255, 0, .75);
+}
+
+#passLine {
+    cursor: pointer;
+    fill:rgba(255, 0, 0, 0);
+}
+
+#passLine:hover {
+    fill:rgba(255, 0, 0, .75);
+}
+
+#comeBar {
+    cursor: pointer;
+    fill:rgba(255, 0, 0, 0);
+}
+
+#comeBar:hover {
+    fill:rgba(255, 0, 0, .75);
+}
+
+#dontComeBar {
+    cursor: pointer;
+    fill:rgba(255, 0, 0, 0);
+}
+
+#dontComeBar:hover {
+    fill:rgba(255, 0, 0, .75);
+}
+
+
+
+
+
+#dontPassBar {
+    cursor: pointer;
+    fill:rgba(255, 0, 0, 0);
+}
+
+#dontPassBar:hover {
+    fill:rgba(255, 0, 0, .75);
+}
+
+#dontPassBar2 {
+    cursor: pointer;
+    fill:rgba(255, 0, 0, 0);
+}
+
+#dontPassBar2:hover {
+    fill:rgba(255, 0, 0, .75);
+}
+
+
+
+
+
+
+#bigEight {
+    cursor: pointer;
+    fill:rgba(255, 0, 0, 0);
+}
+
+#bigEight:hover {
+    fill:rgba(0, 255, 0, .75);
+}
+
+#bigSix {
+    cursor: pointer;
+    fill:rgba(255, 0, 0, 0);
+}
+
+#bigSix:hover {
+    fill:rgba(0, 255, 0, .75);
+}
+
+
+
+
+#placeFour {
+    cursor: pointer;
+    fill:rgba(255, 0, 0, 0);
+}
+
+#placeFour:hover {
+    fill:rgba(0, 255, 0, .75);
+}
+
+#placeFive {
+    cursor: pointer;
+    fill:rgba(255, 0, 0, 0);
+}
+
+#placeFive:hover {
+    fill:rgba(0, 255, 0, .75);
+}
+
+#placeSix {
+    cursor: pointer;
+    fill:rgba(255, 0, 0, 0);
+}
+
+#placeSix:hover {
+    fill:rgba(0, 255, 0, .75);
+}
+
+#placeEight {
+    cursor: pointer;
+    fill:rgba(255, 0, 0, 0);
+}
+
+#placeEight:hover {
+    fill:rgba(0, 255, 0, .75);
+}
+
+#placeNine {
+    cursor: pointer;
+    fill:rgba(255, 0, 0, 0);
+}
+
+#placeNine:hover {
+    fill:rgba(0, 255, 0, .75);
+}
+
+#placeTen {
+    cursor: pointer;
+    fill:rgba(255, 0, 0, 0);
+}
+
+#placeTen:hover {
+    fill:rgba(0, 255, 0, .75);
+}
+
+
+
+
+
+
+#comeOddsFour {
+    cursor: pointer;
+    fill:rgba(255, 0, 0, 0);
+}
+
+#comeOddsFour:hover {
+    fill:rgba(255, 0, 0, .75);
+}
+
+#comeOddsFive {
+    cursor: pointer;
+    fill:rgba(255, 0, 0, 0);
+}
+
+#comeOddsFive:hover {
+    fill:rgba(255, 0, 0, .75);
+}
+
+#comeOddsSix {
+    cursor: pointer;
+    fill:rgba(255, 0, 0, 0);
+}
+
+#comeOddsSix:hover {
+    fill:rgba(255, 0, 0, .75);
+}
+
+#comeOddsEight {
+    cursor: pointer;
+    fill:rgba(255, 0, 0, 0);
+}
+
+#comeOddsEight:hover {
+    fill:rgba(255, 0, 0, .75);
+}
+
+#comeOddsNine {
+    cursor: pointer;
+    fill:rgba(255, 0, 0, 0);
+}
+
+#comeOddsNine:hover {
+    fill:rgba(255, 0, 0, .75);
+}
+
+#comeOddsTen {
+    cursor: pointer;
+    fill:rgba(255, 0, 0, 0);
+}
+
+#comeOddsTen:hover {
+    fill:rgba(255, 0, 0, .75);
+}
+
+
+
+
+
+
+#dontComeOddsFour {
+    cursor: pointer;
+    fill:rgba(255, 0, 0, 0);
+}
+
+#dontComeOddsFour:hover {
+    fill:rgba(255, 0, 0, .75);
+}
+
+#dontComeOddsFive {
+    cursor: pointer;
+    fill:rgba(255, 0, 0, 0);
+}
+
+#dontComeOddsFive:hover {
+    fill:rgba(255, 0, 0, .75);
+}
+
+#dontComeOddsSix {
+    cursor: pointer;
+    fill:rgba(255, 0, 0, 0);
+}
+
+#dontComeOddsSix:hover {
+    fill:rgba(255, 0, 0, .75);
+}
+
+#dontComeOddsEight {
+    cursor: pointer;
+    fill:rgba(255, 0, 0, 0);
+}
+
+#dontComeOddsNine:hover {
+    fill:rgba(255, 0, 0, .75);
+}
+
+#dontComeOddsNine {
+    cursor: pointer;
+    fill:rgba(255, 0, 0, 0);
+}
+
+#dontComeOddsNine:hover {
+    fill:rgba(255, 0, 0, .75);
+}
+
+#dontComeOddsTen {
+    cursor: pointer;
+    fill:rgba(255, 0, 0, 0);
+}
+
+#dontComeOddsTen:hover {
+    fill:rgba(255, 0, 0, .75);
+}
+
+
+
+
+#rollButton:hover{
+    cursor: pointer;
+}
